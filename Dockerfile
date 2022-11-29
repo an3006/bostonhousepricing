@@ -3,4 +3,5 @@ COPY . /app
 WORKDIR /app
 RUN pip install -r requirements.txt
 EXPOSE $PORT
+ENV PORT 8080
 CMD gunicorn --workers=4 --bind 0.0.0.0:$PORT app:app
